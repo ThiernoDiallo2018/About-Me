@@ -210,7 +210,27 @@ You love iOS development because it enables you to transform your creative ideas
         return label
     }()
 
+    // Button
     
+    let introButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .orange
+        button.setTitle("Say Hi 🤚🏾", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 15
+        button.addTarget(HomeViewController.self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc private func buttonPressed(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Thanks for clicking", message: "Nice to Meet You!!", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+
     
     // MARK: - LIFECYCLE
     
@@ -228,6 +248,7 @@ You love iOS development because it enables you to transform your creative ideas
         setUpSecondView()
         setUpThirdView()
         setUpFourthView()
+        setUpButton()
 
     }
         func setUpScrollView() {
@@ -398,5 +419,18 @@ You love iOS development because it enables you to transform your creative ideas
         ])
     }
     
+    func setUpButton() {
+        contentView.addSubview(introButton)
+        
+        NSLayoutConstraint.activate([
+            introButton.topAnchor.constraint(equalTo: fourthView.bottomAnchor, constant: 20),
+            introButton.leadingAnchor.constraint(equalTo: fourthView.leadingAnchor, constant: 40),
+            introButton.trailingAnchor.constraint(equalTo: fourthView.trailingAnchor, constant: -40),
+            introButton.widthAnchor.constraint(equalToConstant: 60),
+            introButton.heightAnchor.constraint(equalToConstant: 70)
+            
+            
+        ])
+    }
     
 }
