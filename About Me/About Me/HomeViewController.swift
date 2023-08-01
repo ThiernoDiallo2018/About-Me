@@ -10,14 +10,13 @@ import UIKit
 class HomeViewController: UIViewController {
     
     // MARK: - PROPERTIES
-    
     let scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.isScrollEnabled = true
         scroll.backgroundColor = .gray
         return scroll
     }()
-    
     let stackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -26,68 +25,19 @@ class HomeViewController: UIViewController {
         stack.distribution = .fill
         return stack
     }()
-    
-    let containerView: UIView = {
+    let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .gray
         return view
     }()
-    
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Thierno Diallo"
-        label.font = .systemFont(ofSize: 24, weight: .bold)
-        label.textColor = .black
-        label.backgroundColor = .gray
-        return label
-    }()
-    
-    
-    let pronounLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "he/him/his"
-        label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .black
-        label.backgroundColor = .gray
-        return label
-    }()
-    
-    let jobLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Profession: Actor, Developer and VC"
-        label.font = .systemFont(ofSize: 16, weight: .bold)
-        label.textColor = .black
-        label.backgroundColor = .gray
-        return label
-    }()
-    
-    
-    
-    let secondView: UIView = {
+    let imageHolder: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 15
+        view.backgroundColor = .black
+        view.layer.cornerRadius = 20
         return view
     }()
-    
-    
-    let lineView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .gray
-        return view
-    }()
-    
-    let secondaryLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
     let imageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -96,8 +46,46 @@ class HomeViewController: UIViewController {
         return image
     }()
     
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Thierno Diallo"
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.textColor = .white
+        return label
+    }()
+    let pronounLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "he/him/his"
+        label.font = .systemFont(ofSize: 12, weight: .bold)
+        label.textColor = .systemGray
+        return label
+    }()
+    let jobLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Actor/Developer"
+        label.font = .systemFont(ofSize: 15, weight: .bold)
+        label.textColor = .white
+        return label
+    }()
     
+    // Second View
     
+    let secondView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    let lineView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .gray
+        return view
+    }()
     let locationIcon: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -105,7 +93,6 @@ class HomeViewController: UIViewController {
         label.font = .systemFont(ofSize: 30)
         return label
     }()
-    
     let location: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -113,8 +100,6 @@ class HomeViewController: UIViewController {
         label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
-    
-    
     let twitterSign: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -122,7 +107,6 @@ class HomeViewController: UIViewController {
         image.layer.cornerRadius = 100
         return image
     }()
-    
     let twitterHandle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -131,7 +115,6 @@ class HomeViewController: UIViewController {
         label.textColor = .systemGray2
         return label
     }()
-    
     let linkedinSign: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -139,7 +122,6 @@ class HomeViewController: UIViewController {
         image.layer.cornerRadius = 100
         return image
     }()
-    
     let link: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -150,7 +132,84 @@ class HomeViewController: UIViewController {
     }()
     
     
+    // Third View
     
+    let thirdView: UIView =  {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    let heartLabel: UILabel = {
+        let label = UILabel()
+        label.text = "❤️"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    let loveExample: UILabel = {
+        let label = UILabel()
+        label.text = "Acting, food, ML, ARKit + RealityKit"
+        label.font = .systemFont(ofSize: 15)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    let kitchenIcon: UILabel = {
+        let label = UILabel()
+        label.text = "👨🏾‍🍳"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    let food: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Burgers + Fries"
+        label.font = .systemFont(ofSize: 15)
+        return label
+    }()
+    let tvIcon: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "📺"
+        return label
+    }()
+    let shows: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Oppenheimer"
+        label.font = .systemFont(ofSize: 15)
+        return label
+    }()
+    
+    
+    // Fourth View
+    
+    let fourthView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    let labelDescription: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "I Like iOS Development because...."
+        label.font = .boldSystemFont(ofSize: 18)
+        return label
+    }()
+    let paragraphDescription: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = """
+You love iOS development because it enables you to transform your creative ideas into tangible and user-friendly mobile applications. The robust and intuitive development environment provided by Apple empowers you to craft elegant and seamless experiences for millions of users worldwide. You enjoy the simplicity and efficiency of Swift, Apple's programming language, which allows you to write clean and expressive code. The constant innovation and regular updates from Apple keep you engaged, providing new tools and features to explore and implement in your projects. Additionally, the supportive and vibrant iOS developer community offers a wealth of knowledge and resources, making the learning journey enjoyable and rewarding. The sense of accomplishment and joy you feel when seeing your apps come to life on iPhones and iPads further fuels your passion for iOS development, driving you to continuously improve your skills and build remarkable applications.
+"""
+        label.font = .systemFont(ofSize: 14)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        return label
+    }()
+
     
     
     // MARK: - LIFECYCLE
@@ -158,27 +217,21 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
         setUpUI()
     }
-    
-    
-    
-    
+ 
     // MARK: - METHODS
-    
     func setUpUI() {
         setUpScrollView()
         setUpContainer()
-        setUpLabel()
-        setUpImage()
+        setUpImageHolder()
         setUpSecondView()
+        setUpThirdView()
+        setUpFourthView()
+
     }
-    
-    //Added the scrollView to our view hierarchy
-    func setUpScrollView() {
+        func setUpScrollView() {
         view.addSubview(scrollView)
-        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -186,49 +239,50 @@ class HomeViewController: UIViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
-    
-    
     func setUpContainer() {
-        scrollView.addSubview(containerView)
-        
+        scrollView.addSubview(contentView)
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor, constant: 30),
-            containerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40),
-            containerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -40),
-            containerView.heightAnchor.constraint(equalToConstant: 310),
-            containerView.widthAnchor.constraint(equalToConstant: 350)
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, constant: 300),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: 0)
             
         ])
     }
-    
-    func setUpImage() {
-        containerView.addSubview(imageView)
+    func setUpImageHolder() {
+        contentView.addSubview(imageHolder)
+        imageHolder.addSubview(imageView)
         
-        NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: 150),
-            imageView.widthAnchor.constraint(equalToConstant: 200),
-            imageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            imageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
-        ])
-    }
-    
-    //Setting up our labels
-    func setUpLabel() {
-        scrollView.addSubview(stackView)
+       
+        imageHolder.addSubview(stackView)
         stackView.addArrangedSubview(nameLabel)
         stackView.addArrangedSubview(jobLabel)
         stackView.addArrangedSubview(pronounLabel)
-        
+         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 10),
-            stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-            
+        imageHolder.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+        imageHolder.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25),
+        imageHolder.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25),
+        imageHolder.heightAnchor.constraint(equalToConstant: 400),
+        imageHolder.widthAnchor.constraint(equalToConstant: 300),
+        
+        imageView.centerXAnchor.constraint(equalTo: imageHolder.centerXAnchor),
+        imageView.centerYAnchor.constraint(equalTo: imageHolder.centerYAnchor),
+        imageView.heightAnchor.constraint(equalToConstant: 250),
+        imageView.widthAnchor.constraint(equalToConstant: 150),
+        
+        stackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+        stackView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
+        stackView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor)
+        
+        
         ])
     }
-    
+
     func setUpSecondView() {
-        scrollView.addSubview(secondView)
+        contentView.addSubview(secondView)
         secondView.addSubview(lineView)
         secondView.addSubview(locationIcon)
         secondView.addSubview(location)
@@ -238,9 +292,9 @@ class HomeViewController: UIViewController {
         secondView.addSubview(link)
         
         NSLayoutConstraint.activate([
-        secondView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
-        secondView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-        secondView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+        secondView.topAnchor.constraint(equalTo: imageHolder.bottomAnchor, constant: 10),
+        secondView.leadingAnchor.constraint(equalTo: imageHolder.leadingAnchor),
+        secondView.trailingAnchor.constraint(equalTo: imageHolder.trailingAnchor),
         secondView.heightAnchor.constraint(equalToConstant: 150),
         secondView.widthAnchor.constraint(equalToConstant: 350),
         
@@ -274,6 +328,74 @@ class HomeViewController: UIViewController {
         
     ])
         
+    }
+    
+    func setUpThirdView() {
+        contentView.addSubview(thirdView)
+        thirdView.addSubview(heartLabel)
+        thirdView.addSubview(loveExample)
+        thirdView.addSubview(kitchenIcon)
+        thirdView.addSubview(food)
+        thirdView.addSubview(tvIcon)
+        thirdView.addSubview(shows)
+        
+        NSLayoutConstraint.activate([
+         thirdView.topAnchor.constraint(equalTo: secondView.bottomAnchor, constant: 10),
+         thirdView.leadingAnchor.constraint(equalTo: secondView.leadingAnchor),
+         thirdView.trailingAnchor.constraint(equalTo: secondView.trailingAnchor),
+         thirdView.heightAnchor.constraint(equalToConstant: 100),
+         thirdView.widthAnchor.constraint(equalToConstant: 350),
+         
+         
+         heartLabel.topAnchor.constraint(equalTo: thirdView.topAnchor, constant: 10),
+         heartLabel.leadingAnchor.constraint(equalTo: thirdView.leadingAnchor, constant: 10),
+         heartLabel.heightAnchor.constraint(equalToConstant: 20),
+         heartLabel.widthAnchor.constraint(equalToConstant: 20),
+         
+         loveExample.leadingAnchor.constraint(equalTo: heartLabel.trailingAnchor,constant: 10),
+         loveExample.topAnchor.constraint(equalTo: thirdView.topAnchor, constant: 10),
+         
+         kitchenIcon.topAnchor.constraint(equalTo: heartLabel.bottomAnchor, constant: 15),
+         kitchenIcon.leadingAnchor.constraint(equalTo: thirdView.leadingAnchor, constant: 10),
+         
+         food.leadingAnchor.constraint(equalTo: kitchenIcon.trailingAnchor, constant: 10),
+         food.topAnchor.constraint(equalTo: loveExample.bottomAnchor, constant: 20),
+         
+         tvIcon.leadingAnchor.constraint(equalTo: food.trailingAnchor, constant: 25),
+         tvIcon.topAnchor.constraint(equalTo: loveExample.bottomAnchor, constant: 20),
+         
+         shows.leadingAnchor.constraint(equalTo: tvIcon.trailingAnchor, constant: 10),
+         shows.topAnchor.constraint(equalTo: loveExample.bottomAnchor, constant: 20)
+         
+         
+         
+        ])
+        
+    }
+    
+    func setUpFourthView() {
+        contentView.addSubview(fourthView)
+        fourthView.addSubview(labelDescription)
+        fourthView.addSubview(paragraphDescription)
+        
+        NSLayoutConstraint.activate([
+        fourthView.topAnchor.constraint(equalTo: thirdView.bottomAnchor, constant: 10),
+        fourthView.leadingAnchor.constraint(equalTo: thirdView.leadingAnchor),
+        fourthView.trailingAnchor.constraint(equalTo: thirdView.trailingAnchor),
+        fourthView.heightAnchor.constraint(equalToConstant: 400),
+        fourthView.widthAnchor.constraint(equalToConstant: 350),
+        
+        
+        labelDescription.topAnchor.constraint(equalTo: fourthView.topAnchor, constant: 10),
+        labelDescription.leadingAnchor.constraint(equalTo: fourthView.leadingAnchor, constant: 10),
+        labelDescription.trailingAnchor.constraint(equalTo: fourthView.trailingAnchor),
+        
+        paragraphDescription.topAnchor.constraint(equalTo: labelDescription.bottomAnchor, constant: 10),
+        paragraphDescription.leadingAnchor.constraint(equalTo: fourthView.leadingAnchor, constant: 5),
+        paragraphDescription.trailingAnchor.constraint(equalTo: fourthView.trailingAnchor, constant: -10),
+        
+        
+        ])
     }
     
     
