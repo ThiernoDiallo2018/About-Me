@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00381B952A5FBA8B00FB0DCC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00381B942A5FBA8B00FB0DCC /* HomeViewController.swift */; };
+		00C51A392A70C40C001273C1 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C51A382A70C40C001273C1 /* CustomLabel.swift */; };
 		00CDA3782A2056FD00701E0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDA3772A2056FD00701E0D /* AppDelegate.swift */; };
 		00CDA37A2A2056FD00701E0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDA3792A2056FD00701E0D /* SceneDelegate.swift */; };
 		00CDA3812A2056FF00701E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CDA3802A2056FF00701E0D /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		00381B942A5FBA8B00FB0DCC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		00C51A382A70C40C001273C1 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		00CDA3742A2056FD00701E0D /* About Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "About Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CDA3772A2056FD00701E0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00CDA3792A2056FD00701E0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				00CDA3772A2056FD00701E0D /* AppDelegate.swift */,
 				00CDA3792A2056FD00701E0D /* SceneDelegate.swift */,
 				00381B942A5FBA8B00FB0DCC /* HomeViewController.swift */,
+				00C51A382A70C40C001273C1 /* CustomLabel.swift */,
 				00CDA3802A2056FF00701E0D /* Assets.xcassets */,
 				00CDA3822A2056FF00701E0D /* LaunchScreen.storyboard */,
 				00CDA3852A2056FF00701E0D /* Info.plist */,
@@ -137,6 +140,7 @@
 				00CDA3782A2056FD00701E0D /* AppDelegate.swift in Sources */,
 				00CDA37A2A2056FD00701E0D /* SceneDelegate.swift in Sources */,
 				00381B952A5FBA8B00FB0DCC /* HomeViewController.swift in Sources */,
+				00C51A392A70C40C001273C1 /* CustomLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
